@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exp_configurations",
+  "info": {
+    "singularName": "exp-configuration",
+    "pluralName": "exp-configurations",
+    "displayName": "EXP Configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "exp": {
+      "type": "biginteger",
+      "required": true
+    },
+    "skill_point": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::skill-point.skill-point",
+      "inversedBy": "level"
+    }
+  }
+}

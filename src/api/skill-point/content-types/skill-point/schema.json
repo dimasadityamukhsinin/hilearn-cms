@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skill_points",
+  "info": {
+    "singularName": "skill-point",
+    "pluralName": "skill-points",
+    "displayName": "Skill Point",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-role.user-role",
+      "inversedBy": "skill_point"
+    },
+    "exp": {
+      "type": "biginteger",
+      "required": true
+    },
+    "tier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tier.tier",
+      "inversedBy": "skill_point"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "skill_points"
+    },
+    "level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::exp-configuration.exp-configuration",
+      "inversedBy": "skill_point"
+    }
+  }
+}

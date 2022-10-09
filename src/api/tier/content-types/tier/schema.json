@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tiers",
+  "info": {
+    "singularName": "tier",
+    "pluralName": "tiers",
+    "displayName": "Tier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "level": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "skill_point": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::skill-point.skill-point",
+      "mappedBy": "tier"
+    }
+  }
+}
