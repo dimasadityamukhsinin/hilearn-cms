@@ -4,3 +4,4 @@ Postgres cluster hilearn-db created
   Hostname:    hilearn-db.internal
   Proxy Port:  5432
   PG Port: 5433
+DATABASE_URL=postgres://hilearn:RdMsSjCrNJOrd0D@top2.nearest.of.hilearn-db.internal:5432/hilearn
